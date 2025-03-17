@@ -11820,6 +11820,7 @@ html {
 }
 
 
+
 @media (max-width: 576px) {
   #prev-btn,
   #next-btn {
@@ -11852,8 +11853,8 @@ html {
   }
 
   .profile-image-container {
-    width: 150px; /* Aumentado o tamanho */
-    height: 150px; /* Aumentado o tamanho */
+    width: 150px;
+    height: 150px; 
   }
 
   .testimonial-content {
@@ -11878,10 +11879,11 @@ html {
     display: flex;
     flex-direction: column-reverse; 
     align-items: center;
+    margin-top: -100px;
   }
 
-  .col-xxl-7 {
-    margin-bottom: 20px; 
+  .col-xxl-8 {
+    margin-top: -15px; 
   }
 }
 
@@ -11921,12 +11923,13 @@ html {
 
   .row.gx-5 {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column-reverse; 
     align-items: center;
+    margin-top: -100px;
   }
 
-  .col-xxl-7 {
-    margin-bottom: 20px;
+  .col-xxl-8 {
+    margin-top: -15px; 
   }
 }
 
