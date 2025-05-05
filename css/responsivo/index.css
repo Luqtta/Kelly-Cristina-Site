@@ -94,9 +94,3 @@
     }
 }
 
-    @media (min-width: 1280px) {
-        .row.gx-5 {
-            display: flex;
-            flex-direction: column-reverse; 
-            align-items: center;
-    }
