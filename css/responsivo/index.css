@@ -1,0 +1,95 @@
+@media (max-width: 576px) {
+    #prev-btn,
+    #next-btn {
+        display: none; 
+    }
+
+    .hover-card {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .hover-card.hover {
+        transform: scale(1.05);
+    }
+
+    .produto-card {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .produto-card.hover {
+        transform: scale(1.05);
+    }
+
+
+    .profile-image-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .testimonial-content {
+        text-align: center;
+    }
+
+    .row.gx-5 {
+        display: flex;
+        flex-direction: column-reverse; 
+        align-items: center;
+        margin-top: -100px;
+    }
+
+    .col-xxl-8 {
+        margin-top: +55px; 
+    }
+
+    .btn-sm {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    .profile {
+        height: 80vw;
+        width: 80vw;
+    }
+    .profile .profile-img {
+        height: 85vw;
+    }
+}
+    
+    @media (min-width: 768px) {
+    .hover-card {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .hover-card.hover {
+        transform: scale(1.05);
+    }
+    
+    .produto-card {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .produto-card.hover {
+        transform: scale(1.05);
+    }
+
+    .btn-sm {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    .profile {
+        height: 80vw;
+        width: 80vw;
+    }
+    .profile .profile-img {
+        height: 85vw;
+    }
+    .row.gx-5 {
+        display: flex;
+        flex-direction: column-reverse; 
+        align-items: center;
+        margin-top: -100px;
+    }
+
+    .col-xxl-8 {
+        margin-top: +55px; 
+    }
+}
