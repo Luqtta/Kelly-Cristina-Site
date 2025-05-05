@@ -10,10 +10,21 @@ function checkCenter() {
 
     cards.forEach((card) => {
       const rect = card.getBoundingClientRect();
-      const distanceToCenter = Math.sqrt(Math.pow(rect.left + rect.width / 2 - centerX, 2) + Math.pow(rect.top + rect.height / 2 - centerY, 2));
-      const isVisible = rect.top < window.innerHeight && rect.bottom > 0 && rect.left < window.innerWidth && rect.right > 0;
+      const distanceToCenter = Math.hypot(
+        rect.left + rect.width / 2 - centerX,
+        rect.top + rect.height / 2 - centerY
+      );
+      const isVisible =
+        rect.top < window.innerHeight &&
+        rect.bottom > 0 &&
+        rect.left < window.innerWidth &&
+        rect.right > 0;
 
-      if (isVisible && (distanceToCenter < 200 || rect.top < centerY + 100 && rect.bottom > centerY - 100)) {
+      if (
+        isVisible &&
+        (distanceToCenter < 200 ||
+          (rect.top < centerY + 100 && rect.bottom > centerY - 100))
+      ) {
         if (distanceToCenter < closestDistance) {
           closestCard = card;
           closestDistance = distanceToCenter;
@@ -22,23 +33,29 @@ function checkCenter() {
     });
 
     cards.forEach((card) => {
-      if (card === closestCard) {
-        card.classList.add('hover');
-      } else {
-        card.classList.remove('hover');
-      }
+      card.classList.toggle('hover', card === closestCard);
     });
   } else if (window.innerWidth < 768) {
-    // Modo responsivo para telas médias
     let closestCard = null;
     let closestDistance = Infinity;
 
     cards.forEach((card) => {
       const rect = card.getBoundingClientRect();
-      const distanceToCenter = Math.sqrt(Math.pow(rect.left + rect.width / 2 - centerX, 2) + Math.pow(rect.top + rect.height / 2 - centerY, 2));
-      const isVisible = rect.top < window.innerHeight && rect.bottom > 0 && rect.left < window.innerWidth && rect.right > 0;
+      const distanceToCenter = Math.hypot(
+        rect.left + rect.width / 2 - centerX,
+        rect.top + rect.height / 2 - centerY
+      );
+      const isVisible =
+        rect.top < window.innerHeight &&
+        rect.bottom > 0 &&
+        rect.left < window.innerWidth &&
+        rect.right > 0;
 
-      if (isVisible && (distanceToCenter < 250 || rect.top < centerY + 150 && rect.bottom > centerY - 150)) {
+      if (
+        isVisible &&
+        (distanceToCenter < 250 ||
+          (rect.top < centerY + 150 && rect.bottom > centerY - 150))
+      ) {
         if (distanceToCenter < closestDistance) {
           closestCard = card;
           closestDistance = distanceToCenter;
@@ -47,14 +64,9 @@ function checkCenter() {
     });
 
     cards.forEach((card) => {
-      if (card === closestCard) {
-        card.classList.add('hover');
-      } else {
-        card.classList.remove('hover');
-      }
+      card.classList.toggle('hover', card === closestCard);
     });
   } else {
-    // Modo não responsivo
     cards.forEach((card) => {
       card.classList.remove('hover');
     });
@@ -64,10 +76,19 @@ function checkCenter() {
 window.addEventListener('scroll', checkCenter);
 window.addEventListener('resize', checkCenter);
 
-const carousel = document.getElementById('carousel');
+// —— A partir daqui, altere para usar /api/reviews ——
+
+// Detecta se estamos em dev local (`vercel dev`) ou em produção
+function getApiBase() {
+  return window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+}
 
 async function fetchReviews() {
-  const response = await fetch('http://localhost:3001/reviews');
+  const base = getApiBase();
+  const response = await fetch(`${base}/api/reviews`);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
   const data = await response.json();
   return data;
 }
@@ -81,6 +102,7 @@ function createStarRating(rating) {
 }
 
 function renderReviews(reviews) {
+  const carousel = document.getElementById('carousel');
   carousel.innerHTML = '';
 
   reviews.forEach((review) => {
@@ -107,43 +129,39 @@ function renderReviews(reviews) {
   });
 }
 
-
 async function init() {
-  const reviews = await fetchReviews();
-  if (reviews.length > 0) {
-    renderReviews(reviews);
+  try {
+    const reviews = await fetchReviews();
+    if (reviews.length > 0) {
+      renderReviews(reviews);
 
-    const shouldLoop = reviews.length > 3; // Só ativa loop se tiver mais de 3
-
-    new Swiper('.mySwiper', {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      loop: shouldLoop,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        renderBullet: function (index, className) {
-          return `<span class="${className} custom-dot"></span>`;
+      new Swiper('.mySwiper', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: reviews.length > 3,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          renderBullet: (index, className) => `<span class="${className} custom-dot"></span>`,
         },
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        1024: { slidesPerView: 3 },
-        768: { slidesPerView: 2 },
-        0: { slidesPerView: 1 },
-      },
-    });
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          1024: { slidesPerView: 3 },
+          768: { slidesPerView: 2 },
+          0: { slidesPerView: 1 },
+        },
+      });
+    }
+  } catch (err) {
+    console.error('Failed to fetch reviews:', err);
   }
 }
 
-
 init();
-
-
