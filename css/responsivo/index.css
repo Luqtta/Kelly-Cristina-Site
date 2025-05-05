@@ -94,8 +94,38 @@
     }
 }
 
+    @media (max-width: 1280px) {
+        .btn-sm {
+        font-size: 12px; 
+        padding: 4px 8px; 
+        }
+    
+        .profile {
+        height: 25vw; 
+        width: 25vw; 
+        }
+        .profile .profile-img {
+        height: 30vw; 
+        }
+    
+    
+        .navbar-nav {
+        display: flex;
+        justify-content: center; 
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        }
+    
+        .navbar-nav li {
+        margin: 0 15px;
+        }
+    }
+  
+
 @media (min-width: 1024px) and (max-width: 1025px), 
-       (min-width: 1366px) and (max-width: 1367px) {
+       (min-width: 1366px) and (max-width: 1367px),
+       (min-width: 1280px) and (max-width: 1281px) {
   .row.gx-5 {
     display: flex;
     flex-direction: column-reverse;
