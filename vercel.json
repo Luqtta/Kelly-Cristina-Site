@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/beneficios",
+      "dest": "/beneficios.html"
+    },
+    {
+      "src": "/formacao",
+      "dest": "/formacao.html"
+    }
+  ]
+}
