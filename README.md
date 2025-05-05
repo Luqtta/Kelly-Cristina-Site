@@ -11,6 +11,11 @@ Este projeto é um site desenvolvido para uma advogada previdenciária, utilizan
 - **Node.js**
 - **Bootstrap**
 
+## 🖼️ Preview
+
+> ![Image](https://github.com/user-attachments/assets/f09d9368-3dee-4adf-9615-cf15dda39e20)
+
+
 ## **Descrição do Projeto**
 
 O site foi desenvolvido com foco em **estrutura robusta** e **otimização**. A combinação das tecnologias acima garante uma interface **responsiva** e adaptável a diferentes dispositivos, proporcionando uma experiência fluida e fácil de navegar.
