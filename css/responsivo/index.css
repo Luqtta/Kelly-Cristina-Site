@@ -93,34 +93,6 @@
         margin-top: +55px; 
     }
 }
-
-    @media (max-width: 1280px) {
-        .btn-sm {
-        font-size: 12px; 
-        padding: 4px 8px; 
-        }
-    
-        .profile {
-        height: 25vw; 
-        width: 25vw; 
-        }
-        .profile .profile-img {
-        height: 30vw; 
-        }
-    
-    
-        .navbar-nav {
-        display: flex;
-        justify-content: center; 
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        }
-    
-        .navbar-nav li {
-        margin: 0 15px;
-        }
-    }
   
 
 @media (min-width: 1024px) and (max-width: 1025px), 
