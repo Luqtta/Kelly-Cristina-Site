@@ -54,7 +54,7 @@
     }
 }
     
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
     .hover-card {
         transition: transform 0.3s ease-in-out;
     }
@@ -91,23 +91,6 @@
 
     .col-xxl-8 {
         margin-top: +55px; 
-    }
-}
-
-@media (min-width: 1280px) {
-    .row.gx-5 {
-        display: flex;
-        flex-direction: column-reverse; 
-        align-items: center;
-        margin-top: -70px;
-
-        .profile {
-            height: 40vw;
-            width: 40vw;
-          }
-          .profile .profile-img {
-            height: 50vw;
-          }
     }
 }
 
