@@ -13,7 +13,7 @@ Este projeto é um site desenvolvido para uma advogada previdenciária, utilizan
 
 ## 🖼️ Preview
 
-> ![Image](https://github.com/user-attachments/assets/f09d9368-3dee-4adf-9615-cf15dda39e20)
+> ![Image](https://github.com/user-attachments/assets/c285a7b1-ebcf-43ea-9bfc-222acf7bd70c)
 
 
 ## **Descrição do Projeto**
