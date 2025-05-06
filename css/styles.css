@@ -106,6 +106,10 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.container.px-5 {
+  margin-top: 50px; 
+}
+
 .faq-card {
   border: 1px solid rgba(224, 224, 224, 0.5);
   border-radius: 12px;
@@ -243,7 +247,7 @@ body {
 
 .swiper-pagination {
   position: relative;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .swiper-pagination-bullet {
