@@ -166,6 +166,8 @@ async function init() {
 
 init();
 
+AOS.init();
+
 const items = document.querySelectorAll('.faq-item');
 
 items.forEach(item => {
