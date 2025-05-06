@@ -106,9 +106,6 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.container.px-5 {
-  margin-top: 50px; 
-}
 
 .faq-card {
   border: 1px solid rgba(224, 224, 224, 0.5);
@@ -170,6 +167,8 @@ body {
   max-height: 500px;
   margin-top: 8px;
 }
+
+
 
   .whatsapp-float {
     position: fixed;
@@ -247,7 +246,7 @@ body {
 
 .swiper-pagination {
   position: relative;
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 30px;
 }
 
