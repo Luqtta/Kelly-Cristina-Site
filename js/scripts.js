@@ -165,3 +165,30 @@ async function init() {
 }
 
 init();
+
+const items = document.querySelectorAll('.faq-item');
+
+items.forEach(item => {
+  item.addEventListener('click', () => {
+    const answer = item.querySelector('.faq-answer');
+    const isActive = item.classList.contains('active');
+
+    document.querySelectorAll('.faq-item.active').forEach(activeItem => {
+      activeItem.classList.remove('active');
+      const activeAnswer = activeItem.querySelector('.faq-answer');
+      activeAnswer.style.height = '0';
+      activeAnswer.style.paddingTop = '0';
+    });
+
+    if (!isActive) {
+      item.classList.add('active');
+      setTimeout(() => {
+        answer.style.height = `${answer.scrollHeight}px`;
+      }, 10);
+      answer.style.paddingTop = '10px';
+    } else {
+      answer.style.height = '0';
+      answer.style.paddingTop = '0';
+    }
+  });
+});
