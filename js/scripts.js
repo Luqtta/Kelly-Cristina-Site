@@ -76,9 +76,7 @@ function checkCenter() {
 window.addEventListener('scroll', checkCenter);
 window.addEventListener('resize', checkCenter);
 
-// —— A partir daqui, altere para usar /api/reviews ——
 
-// Detecta se estamos em dev local (`vercel dev`) ou em produção
 function getApiBase() {
   return window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
 }
