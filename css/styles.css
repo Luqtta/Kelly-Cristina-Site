@@ -12043,3 +12043,12 @@ html {
 .sobremim {
   margin-top: 50px !important;
 }
+
+.fade-move {
+  transform: translateX(-30px); 
+  transition: transform 0.5s ease 1s; 
+}
+
+.aos-animate.fade-move {
+  transform: translateX(0); 
+}
