@@ -106,6 +106,67 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.faq-card {
+  border: 1px solid rgba(224, 224, 224, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background-color: #fff;
+  padding: 20px;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(173, 172, 172, 0.5); 
+  padding: 15px 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, padding 0.3s ease;
+  border-radius: 8px;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item:hover {
+  transform: translateX(-5px);
+}
+
+.faq-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.faq-text {
+  flex: 1;
+  transition: color 0.3s ease;
+}
+
+.faq-icon {
+  color: #666;
+  transition: color 0.3s ease;
+  font-size: 18px;
+}
+
+.faq-item:hover .faq-icon,
+.faq-item:hover .faq-text {
+  color: #007BFF;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, paadding 0.4s ease;
+  color: #333;
+  font-size: 14px;
+  padding-left: 28px;
+  padding-top: 10px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  margin-top: 8px;
+}
+
   .whatsapp-float {
     position: fixed;
     bottom: 20px;
