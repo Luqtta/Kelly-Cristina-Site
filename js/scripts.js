@@ -136,30 +136,32 @@ async function init() {
     if (reviews.length > 0) {
       renderReviews(reviews);
 
-      new Swiper('.mySwiper', {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        loop: reviews.length > 3,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          renderBullet: (index, className) => `<span class="${className} custom-dot"></span>`,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: false,
-        },
-        breakpoints: {
-          1024: { slidesPerView: 3 },
-          768: { slidesPerView: 2 },
-          0: { slidesPerView: 1 },
-        },
-      });
-    }
+      if (typeof Swiper !== 'undefined') {
+        new Swiper('.mySwiper', {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          loop: reviews.length > 3,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: (index, className) => `<span class="${className} custom-dot"></span>`,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+          },
+          breakpoints: {
+            1024: { slidesPerView: 3 },
+            768: { slidesPerView: 2 },
+            0: { slidesPerView: 1 },
+          },
+        });
+      }
+    }      
   } catch (err) {
     console.error('Failed to fetch reviews:', err);
   }
