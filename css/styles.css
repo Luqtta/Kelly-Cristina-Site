@@ -417,19 +417,19 @@ h2.fw-bolder.fs-7 {
   transform: scale(1.05);
 }
 
-/* Ajustar o título para ter uma distância mínima do texto */
+
 .card-body h2 {
-  margin: 0; /* Remove qualquer margem no título */
-  padding: 0; /* Remove padding do título */
-  font-size: 1.25rem; /* Tamanho maior para o título */
-  line-height: 1.6; /* Ajusta a altura da linha do título */
-  font-weight: 600; /* Destaca o título com um peso maior */
+  margin: 0; 
+  padding: 0; 
+  font-size: 1.25rem; 
+  line-height: 1.6;
+  font-weight: 600; 
 }
 
 
-/* Caso queira uma altura fixa, você pode definir algo como: */
+
 .card-body {
-  height: 270px; /* Exemplo de altura fixa */
+  height: 270px; 
 }
 
 
@@ -445,9 +445,7 @@ h2.fw-bolder.fs-7 {
   border-radius: 5px; 
 }
 
-.hover-icon {
-  transition: transform 0.2s ease-in-out;
-}
+
 
 .nav-link {
   position: relative;
@@ -835,7 +833,9 @@ legend + * {
 [type=search] {
   outline-offset: -2px;
   -webkit-appearance: textfield;
+  appearance: textfield;
 }
+
 
 /* rtl:raw:
 [type="tel"],
@@ -856,7 +856,9 @@ legend + * {
 ::file-selector-button {
   font: inherit;
   -webkit-appearance: button;
+  appearance: button;
 }
+
 
 output {
   display: inline-block;
@@ -11957,10 +11959,12 @@ html {
 }
 
 .text-gradient {
-  background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+  background: linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
   -webkit-background-clip: text;
+  background-clip: text; 
   -webkit-text-fill-color: transparent;
 }
+
 
 .rounded-4 {
   border-radius: 1rem !important;
