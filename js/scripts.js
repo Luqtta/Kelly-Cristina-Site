@@ -167,7 +167,10 @@ async function init() {
 
 init();
 
-AOS.init();
+if (typeof AOS !== 'undefined') {
+  AOS.init();
+}
+
 
 const items = document.querySelectorAll('.faq-item');
 
