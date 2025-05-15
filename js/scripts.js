@@ -101,6 +101,8 @@ function createStarRating(rating) {
 
 function renderReviews(reviews) {
   const carousel = document.getElementById('carousel');
+  if (!carousel) return; 
+
   carousel.innerHTML = '';
 
   reviews.forEach((review) => {
@@ -126,6 +128,7 @@ function renderReviews(reviews) {
     carousel.appendChild(card);
   });
 }
+
 
 async function init() {
   try {
@@ -164,9 +167,7 @@ async function init() {
 
 init();
 
-if (typeof AOS !== 'undefined') {
-  AOS.init();
-}
+AOS.init();
 
 const items = document.querySelectorAll('.faq-item');
 
