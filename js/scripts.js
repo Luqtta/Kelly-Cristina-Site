@@ -83,7 +83,10 @@ function getApiBase() {
 
 async function fetchReviews() {
   const base = getApiBase();
-  const response = await fetch(`${base}/api/reviews`);
+  const response = await fetch(`${base}/api/reviews`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' }
+  });
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
