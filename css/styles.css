@@ -985,6 +985,12 @@ p:last-child {
   align-items: stretch;
 }
 
+.testimonials__cta {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
 .swiper-pagination {
   bottom: 0.2rem !important;
   z-index: 1;
