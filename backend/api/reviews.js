@@ -20,10 +20,7 @@ export default async function handler(req, res) {
     const reviews = response.data.result?.reviews || [];
     console.log("Reviews encontradas:", reviews.length);
 
-    const shuffled = reviews.sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 5);
-
-    return res.status(200).json(selected);
+    return res.status(200).json(reviews);
   } catch (err) {
     console.error("Erro ao chamar Google API:", err.response?.data || err.message);
     return res.status(500).json({ error: "Erro ao buscar avaliações" });

@@ -62,6 +62,9 @@ function createStarRating(rating) {
   return Array.from({ length: 5 }, (_, i) => i < rating ? '\u2605' : '\u2606').join('');
 }
 
+let reviewsSwiper = null;
+const MAX_VISIBLE_REVIEW_SLIDES = 3;
+
 function renderReviews(reviews) {
   const carousel = document.getElementById('carousel');
   if (!carousel || reviews.length === 0) return;
@@ -88,32 +91,40 @@ function renderReviews(reviews) {
 function initSwiper() {
   if (typeof Swiper === 'undefined') return;
   const reviewSlides = document.querySelectorAll('.mySwiper .swiper-slide').length;
-  const canLoop = reviewSlides > 1;
+  const canNavigate = reviewSlides > 1;
+  const canLoop = reviewSlides > MAX_VISIBLE_REVIEW_SLIDES;
 
-  new Swiper('.mySwiper', {
+  if (reviewsSwiper) {
+    reviewsSwiper.destroy(true, true);
+    reviewsSwiper = null;
+  }
+
+  reviewsSwiper = new Swiper('.mySwiper', {
     slidesPerView: 1,
     spaceBetween: 24,
     loop: canLoop,
-    loopedSlides: reviewSlides,
-    loopAdditionalSlides: reviewSlides,
-    rewind: false,
-    watchOverflow: false,
-    centerInsufficientSlides: false,
-    allowTouchMove: canLoop,
+    rewind: !canLoop && canNavigate,
+    watchOverflow: true,
+    centerInsufficientSlides: true,
+    allowTouchMove: canNavigate,
     slidesPerGroup: 1,
     centeredSlides: false,
+    observer: true,
+    observeParents: true,
+    observeSlideChildren: true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
+      dynamicBullets: reviewSlides > 5,
     },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    autoplay: {
+    autoplay: canNavigate ? {
       delay: 5000,
       disableOnInteraction: false,
-    },
+    } : false,
     breakpoints: {
       768: { slidesPerView: 2 },
       1100: { slidesPerView: 3 },
