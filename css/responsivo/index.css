@@ -17,13 +17,7 @@
   }
 
   .review-card {
-    min-height: 415px;
-    max-height: 415px;
-  }
-
-  .review-text {
-    -webkit-line-clamp: 8;
-    line-clamp: 8;
+    height: 415px;
   }
 }
 
@@ -95,8 +89,7 @@
   }
 
   .review-card {
-    min-height: 400px;
-    max-height: 400px;
+    height: 400px;
   }
 
   .hero__trust-item span {
@@ -290,8 +283,7 @@
   }
 
   .review-card {
-    min-height: 380px;
-    max-height: 380px;
+    height: 380px;
   }
 }
 
@@ -385,8 +377,7 @@
 
   .review-card {
     padding: 1.5rem;
-    min-height: 350px;
-    max-height: 350px;
+    height: 350px;
   }
 
   .whatsapp-float {
