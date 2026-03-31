@@ -880,6 +880,7 @@ p:last-child {
   padding: 2rem;
   min-height: 430px;
   max-height: 430px;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -967,8 +968,9 @@ p:last-child {
 /* Swiper */
 
 .testimonials .swiper {
+  width: 100%;
   padding-bottom: 5rem !important;
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 
 .testimonials .swiper-wrapper {
@@ -978,6 +980,7 @@ p:last-child {
 .testimonials .swiper-slide {
   height: auto;
   display: flex;
+  align-items: stretch;
 }
 
 .swiper-pagination {
