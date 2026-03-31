@@ -1,0 +1,53 @@
+# Dependências
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Arquivos de ambiente
+.env
+.env.*
+!.env.example
+
+# Build / output
+dist/
+build/
+out/
+
+# Cache
+.cache/
+.next/
+.nuxt/
+.vite/
+coverage/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDE / editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos temporários
+tmp/
+temp/
+
+# Testes
+coverage/
+
+# Arquivos de lock (opcional — escolha 1 padrão)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Outros
+*.tgz
+*.bake

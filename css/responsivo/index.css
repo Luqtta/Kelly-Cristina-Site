@@ -1,0 +1,332 @@
+/*
+ * Kelly Cristina Advocacia - Estilos Responsivos
+ * Redesign v2.0
+ */
+
+/* ===================================
+   TABLET GRANDE (<= 1100px)
+   =================================== */
+
+@media (max-width: 1100px) {
+  .site-nav__links {
+    gap: 1.4rem;
+  }
+
+  .site-nav__inner > .btn-gold {
+    padding: 0.74rem 1rem;
+    font-size: 0.88rem;
+  }
+
+  .hero__inner {
+    gap: 3rem;
+  }
+
+  .hero__photo-frame {
+    max-width: 360px;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===================================
+   TABLET (<= 900px)
+   =================================== */
+
+@media (max-width: 900px) {
+  .authority__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-card--centered {
+    grid-column: auto;
+  }
+
+  .differentials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about__inner {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+  }
+}
+
+/* ===================================
+   TABLET PEQUENO (<= 768px)
+   =================================== */
+
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .site-nav__links {
+    display: none;
+  }
+
+  .site-nav__inner > .btn-gold {
+    display: none;
+  }
+
+  .site-nav__inner {
+    grid-template-columns: 1fr auto;
+    min-height: 72px;
+    gap: 1rem;
+    padding: 0.55rem 0;
+  }
+
+  .site-nav__logo img {
+    height: 44px;
+  }
+
+  .site-nav__toggle {
+    display: block;
+  }
+
+  .site-nav__mobile {
+    width: 100%;
+    max-width: none;
+    border-radius: 14px;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: calc(72px + 3.15rem);
+    padding-bottom: 3rem;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .hero__badge {
+    margin: 0 auto 1.25rem;
+  }
+
+  .hero__eyebrow {
+    margin: 0 auto 1rem;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__trust {
+    justify-content: center;
+  }
+
+  .hero__photo {
+    order: -1;
+  }
+
+  .hero__photo-frame {
+    max-width: 300px;
+  }
+
+  .hero__photo-frame::after {
+    display: none;
+  }
+
+  /* Help section */
+  .help-section__inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .help-card {
+    position: static;
+  }
+
+  /* About */
+  .about__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about__photo-wrap {
+    order: -1;
+  }
+
+  .about__photo {
+    max-width: 300px;
+  }
+
+  .about__content .section-title {
+    text-align: center;
+  }
+
+  .about__content .section-label {
+    text-align: center;
+    display: block;
+  }
+
+  .about__role {
+    text-align: center;
+  }
+
+  .about__credentials {
+    text-align: left;
+  }
+
+  .about__social {
+    justify-content: center;
+  }
+
+  /* Services */
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Differentials */
+  .differentials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer__brand {
+    grid-column: auto;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  /* Swiper buttons */
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}
+
+/* ===================================
+   MOBILE (<= 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .btn-lg {
+    padding: 1rem 1.75rem;
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding-top: calc(68px + 2.5rem);
+    padding-bottom: 2.5rem;
+  }
+
+  .hero__title {
+    font-size: 1.875rem;
+  }
+
+  .hero__trust {
+    flex-wrap: wrap;
+    gap: 0.875rem 1.25rem;
+    justify-content: center;
+  }
+
+  .hero__trust-sep {
+    display: none;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__actions .btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero__photo-frame {
+    max-width: 260px;
+  }
+
+  .hero__photo-frame::before {
+    top: -10px;
+    left: -10px;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .services,
+  .help-section,
+  .differentials,
+  .testimonials,
+  .faq,
+  .about,
+  .final-cta {
+    padding: 4rem 0;
+  }
+
+  .authority {
+    padding: 3rem 0;
+  }
+
+  .faq-header {
+    padding: 1.125rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem;
+  }
+
+  .service-card,
+  .diff-item {
+    padding: 1.5rem;
+  }
+
+  .help-card {
+    padding: 1.75rem;
+  }
+
+  .review-card {
+    padding: 1.5rem;
+  }
+
+  .whatsapp-float {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 54px;
+    height: 54px;
+    font-size: 1.5rem;
+  }
+
+  .whatsapp-float__tooltip {
+    display: none;
+  }
+
+  .about__photo {
+    max-width: 260px;
+  }
+
+  .about__photo::before {
+    top: -10px;
+    right: -10px;
+  }
+}
