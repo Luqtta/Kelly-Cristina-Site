@@ -878,7 +878,8 @@ p:last-child {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 2rem;
-  height: 100%;
+  min-height: 430px;
+  max-height: 430px;
   display: flex;
   flex-direction: column;
 }
@@ -897,6 +898,11 @@ p:last-child {
   font-style: italic;
   flex: 1;
   margin-bottom: 1.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 9;
+  line-clamp: 9;
 }
 
 .review-author,
@@ -937,6 +943,9 @@ p:last-child {
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .review-author span,
@@ -946,11 +955,34 @@ p:last-child {
   color: var(--text-muted);
 }
 
+.review-header > div {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* Swiper */
 
 .testimonials .swiper {
-  padding-bottom: 3.5rem !important;
+  padding-bottom: 5rem !important;
   overflow: visible !important;
+}
+
+.testimonials .swiper-wrapper {
+  align-items: stretch;
+}
+
+.testimonials .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.swiper-pagination {
+  bottom: 0.2rem !important;
+  z-index: 1;
 }
 
 .swiper-pagination-bullet {
@@ -963,8 +995,10 @@ p:last-child {
 
 .swiper-pagination-bullet-active {
   background-color: var(--gold);
-  width: 24px;
-  border-radius: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: scale(1.08);
 }
 
 .swiper-button-prev,
@@ -977,8 +1011,9 @@ p:last-child {
   box-shadow: var(--shadow-sm);
   color: var(--text-primary) !important;
   top: auto !important;
-  bottom: 0 !important;
+  bottom: 1.55rem !important;
   transition: var(--transition);
+  z-index: 3 !important;
 }
 
 .swiper-button-prev {

@@ -4,6 +4,44 @@
  */
 
 /* ===================================
+   NOTEBOOK (<= 1366px)
+   =================================== */
+
+@media (max-width: 1366px) {
+  .review-card {
+    min-height: 415px;
+    max-height: 415px;
+  }
+
+  .review-text {
+    -webkit-line-clamp: 8;
+    line-clamp: 8;
+  }
+}
+
+/* ===================================
+   DESKTOP MENOR (<= 1200px)
+   =================================== */
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .hero__inner,
+  .help-section__inner,
+  .about__inner {
+    gap: 2.5rem;
+  }
+
+  .hero__trust {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.85rem;
+  }
+}
+
+/* ===================================
    TABLET GRANDE (<= 1100px)
    =================================== */
 
@@ -40,6 +78,20 @@
    =================================== */
 
 @media (max-width: 900px) {
+  .review-card {
+    min-height: 400px;
+    max-height: 400px;
+  }
+
+  .hero__trust-item span {
+    white-space: normal;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .authority__grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -215,6 +267,15 @@
   .swiper-button-next {
     display: none !important;
   }
+
+  .testimonials .swiper {
+    padding-bottom: 3.75rem !important;
+  }
+
+  .review-card {
+    min-height: 380px;
+    max-height: 380px;
+  }
 }
 
 /* ===================================
@@ -307,6 +368,8 @@
 
   .review-card {
     padding: 1.5rem;
+    min-height: 350px;
+    max-height: 350px;
   }
 
   .whatsapp-float {

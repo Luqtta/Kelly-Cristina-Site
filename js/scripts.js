@@ -87,10 +87,15 @@ function renderReviews(reviews) {
 
 function initSwiper() {
   if (typeof Swiper === 'undefined') return;
+  const reviewSlides = document.querySelectorAll('.mySwiper .swiper-slide').length;
+  const canLoop = reviewSlides > 1;
+
   new Swiper('.mySwiper', {
     slidesPerView: 1,
     spaceBetween: 24,
-    loop: false,
+    loop: canLoop,
+    loopAdditionalSlides: 3,
+    allowTouchMove: canLoop,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
