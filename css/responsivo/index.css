@@ -8,6 +8,14 @@
    =================================== */
 
 @media (max-width: 1366px) {
+  .hero__photo {
+    transform: translateY(-18px);
+  }
+
+  .hero__photo-frame {
+    max-width: 440px;
+  }
+
   .review-card {
     min-height: 415px;
     max-height: 415px;
@@ -39,6 +47,10 @@
     justify-content: center;
     row-gap: 0.85rem;
   }
+
+  .hero__photo {
+    transform: translateY(-12px);
+  }
 }
 
 /* ===================================
@@ -60,7 +72,7 @@
   }
 
   .hero__photo-frame {
-    max-width: 360px;
+    max-width: 400px;
   }
 
   .footer__inner {
@@ -78,6 +90,10 @@
    =================================== */
 
 @media (max-width: 900px) {
+  .hero__photo {
+    transform: translateY(-8px);
+  }
+
   .review-card {
     min-height: 400px;
     max-height: 400px;
@@ -181,10 +197,11 @@
 
   .hero__photo {
     order: -1;
+    transform: none;
   }
 
   .hero__photo-frame {
-    max-width: 300px;
+    max-width: 340px;
   }
 
   .hero__photo-frame::after {
@@ -322,7 +339,7 @@
   }
 
   .hero__photo-frame {
-    max-width: 260px;
+    max-width: 290px;
   }
 
   .hero__photo-frame::before {
