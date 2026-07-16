@@ -62,6 +62,11 @@ function createStarRating(rating) {
   return Array.from({ length: 5 }, (_, i) => i < rating ? '\u2605' : '\u2606').join('');
 }
 
+// Conte\u00fado vem do Google (terceiros) \u2014 escapa HTML e s\u00f3 aceita http(s) em URLs.
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => (
+  { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const safeUrl = u => /^https?:\/\//i.test(u) ? esc(u) : '';
+
 let reviewsSwiper = null;
 const MAX_VISIBLE_REVIEW_SLIDES = 3;
 
@@ -70,16 +75,19 @@ function renderReviews(reviews) {
   if (!carousel || reviews.length === 0) return;
 
   carousel.innerHTML = reviews.map(review => {
+    const photo = safeUrl(review.profile_photo_url);
+    const authorUrl = safeUrl(review.author_url);
+    const name = esc(review.author_name);
     return `
       <div class="swiper-slide">
         <div class="review-card">
-          <div class="review-stars">${createStarRating(review.rating)}</div>
-          <p class="review-text">"${review.text}"</p>
+          <div class="review-stars">${createStarRating(Number(review.rating) || 0)}</div>
+          <p class="review-text">"${esc(review.text)}"</p>
           <div class="review-header">
-            <img src="${review.profile_photo_url}" alt="${review.author_name}" onerror="this.style.display='none'">
+            <img src="${photo}" alt="${name}" onerror="this.style.display='none'">
             <div>
-              <a href="${review.author_url}" target="_blank" rel="noopener" class="review-name">${review.author_name}</a>
-              <small>${review.relative_time_description}</small>
+              <a href="${authorUrl || '#'}" target="_blank" rel="noopener noreferrer" class="review-name">${name}</a>
+              <small>${esc(review.relative_time_description)}</small>
             </div>
           </div>
         </div>
