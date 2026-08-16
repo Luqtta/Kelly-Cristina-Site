@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vercel dev"
+    "dev": "vercel dev",
+    "check:seo": "node scripts/check-seo.mjs"
   },
   "dependencies": {
     "axios": "^1.9.0",

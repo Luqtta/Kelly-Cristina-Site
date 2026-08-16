@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /backend/
+
+Sitemap: https://kellycristinaadv.com.br/sitemap.xml
