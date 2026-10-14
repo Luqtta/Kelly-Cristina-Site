@@ -196,7 +196,12 @@ document.querySelectorAll('.faq-item').forEach(item => {
    ======================== */
 
 function gtag_report_conversion(url) {
-  const go = () => { if (url) window.location.assign(url); };
+  let done = false;
+  const go = () => {
+    if (done) return;
+    done = true;
+    if (url) window.location.assign(url);
+  };
   try {
     if (typeof gtag === 'function') {
       gtag('event', 'conversion', {
